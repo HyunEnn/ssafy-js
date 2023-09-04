@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1 방식
+      let obj = {
+        name = '홍길동'
+      }
+      console.log(obj.name);
+      obj.age = 12;
+      console.log(obj.age);
+      let obj2 = {};
+      obj2.name = '둘리';
+      ojb2.age = 14;
+      console.log(obj2.name);
+      console.log(obj2.age);
+
+      // 2 방식
+      let obj3 = new Object();
+      obj3.name = '또치';
+      obj3.age = 11;
+      console.log(obj3.name);
+      console.log(obj3.age);
+
+      Object.prototpye.name = '또치';
+      Object.prototype.age = '13';
+      let obj4 = new Object();
+      console.log(obj4.name);
+      console.log(obj4.age);
+
+      // 3 방식
+      function ssafy(name, age) {
+        this.name = name;
+        this.age = age;
+        function print() {
+            return {
+                name : this.age;
+                age : this.age;
+            }
+        }
+      }
+      let obj5 = new ssafy("도우너", 17);
+      console.log(obj5.name);
+      console.log(obj5.age);
+    </script>
+  </body>
+</html>

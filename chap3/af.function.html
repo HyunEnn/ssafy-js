@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function a(arg) {
+        arg();
+        var r = function () {
+          console.log("inner 1");
+        };
+        var rr = function () {
+          console.log("inner 2");
+        };
+
+        return [r, rr];
+      }
+      function b() {
+        console.log("function b");
+      }
+      function f() {
+        console.log("function f");
+      }
+
+      var c = a(b);
+      c[0]();
+      c[1]();
+    </script>
+  </body>
+</html>

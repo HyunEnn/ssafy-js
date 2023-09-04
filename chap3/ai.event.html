@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">버튼</button>
+
+    <script>
+      function aa(e) {
+        console.log(e.target);
+        e.target.innerText = e.target.innerText == "버튼" ? "눌렀어" : "버튼";
+        window.document.querySelector("#text").innerText += "눌렀어";
+        console.log("버튼 버튼....");
+      }
+
+      //   let b = window.document.getElementById("btn1"); // id 값으로 조회
+      //   let b = window.document.getElementsByTagName("button"); // tag 값으로 조회
+      let b = window.document.querySelector("#btn1");
+      console.log(b);
+      //   b.addEventListener("click", aa);
+      //   b[0].addEventListener("click", aa);
+      b.addEventListener("click", aa);
+    </script>
+  </body>
+</html>

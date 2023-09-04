@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        function openAlert() {
+          alert("알림창입니다.");
+        }
+
+        function openConfirm() {
+          if (confirm("확인입니까?")) {
+            console.log("확인 눌렀네요.");
+          } else {
+            console.log("취소 눌렀네요.");
+          }
+        }
+
+        function openPrompt() {
+          var txt = prompt("문자열 입력", "사용자입력");
+          console.log(txt);
+        }
+        var input = document.getElementsByTagName("input"); // tagName이 input인 값들을 찾아서 input 배열에 저장
+        console.log(input);
+        input[0].addEventListener("click", openAlert);
+        input[1].addEventListener("click", openConfirm);
+        input[2].addEventListener("click", openPrompt);
+      }; // button을 눌렀을 때, 작동하는 이벤트들
+      // body에서 로딩이 끝나고 나서, 값들을 읽어올 수 있도록, onload를 사용함.
+      // 그게 아니면 body 태그 맨 뒤에 script를 작성하던지, 아니면 아래와 같이
+      // onclick=javascript를 사용해야 한다.
+    </script>
+  </head>
+  <body>
+    <input type="button" value="알림창" onclick="javascript:openAlert();" />
+    <input type="button" value="확인창" onclick="javascript:openConfirm();" />
+    <input type="button" value="입력창" onclick="javascript:openPrompt();" />
+  </body>
+</html>
